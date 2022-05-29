@@ -13,7 +13,7 @@ class forgitPosswrold : AppCompatActivity() {
         binding = ActivityForgitPosswroldBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.appCompatButton.setOnClickListener{
-            if (binding.textInputLayout3.isNotEmpty()){
+            if (binding.mailf.length()!=0 ){
                 binding.Mailsended.text="Check your mail"
             }else {
                 binding.Mailsended.text="your mail input empty"

@@ -13,8 +13,9 @@ class Registretion : AppCompatActivity() {
         binding =ActivityRegistretionBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.button.setOnClickListener{
-            if (binding.textInputLayout.isNotEmpty() && binding.textInputLayout2.isNotEmpty() && binding.textInputLayout4.isNotEmpty()
-                && binding.textInputLayout5.isNotEmpty() &&binding.textInputLayout6.isNotEmpty() && binding.textInputLayout5.editText==binding.textInputLayout6.editText
+            if (binding.inpFullNameRegestration.length()!=0 && binding.MailRegestretion.length()!=0
+                && binding.phone.length()!=0 && binding.Possworld.length()!=0 &&
+                binding.confPosswrold.length()!=0 && !binding.Possworld.equals(binding.confPosswrold)
                 && binding.checkBox2.isChecked){
                 var intent = Intent(this,Resturent::class.java)
                 startActivity(intent)
@@ -23,6 +24,11 @@ class Registretion : AppCompatActivity() {
                 binding.textView4.text="One of input is empty"
             }
 
+        }
+        binding.textView5.setOnClickListener{
+            var intent = Intent(this,login::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

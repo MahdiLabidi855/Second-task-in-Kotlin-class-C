@@ -10,6 +10,7 @@ class Resturent : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResturentBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
         var bt1 =0
         var S:Int
@@ -85,9 +86,27 @@ class Resturent : AppCompatActivity() {
             }
         }
         binding.border.setOnClickListener{
-            val intent =Intent(this,Order::class.java)
-            startActivity(intent)
 
+
+            binding.tvorder.text="your order is \n" +
+                    ( if (t1!=0){
+                        "$t1 Burger \n"
+                    }else {""})+
+                    (if(t2!=0){
+                        "$t2 Pizza \n"
+                    }else{""})+
+                    ( if (t3!=0){
+                        "$t3 Cola \n"
+                    }else {""})
+
+        }
+        binding.Addb.setOnClickListener{
+            var intent =Intent(this,Resturent::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.confb.setOnClickListener{
+            binding.tvorder.text="Your Order well delivery in 2 hours"
         }
     }
 }

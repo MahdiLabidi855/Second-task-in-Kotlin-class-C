@@ -14,7 +14,7 @@ class login : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener{
-            if (binding.inpFullNameLayout.isNotEmpty() && binding.inppossworldlayout.isNotEmpty()){
+            if (binding.inpFullName.length()!=0 && binding.inppossworld.length()!=0 ){
             var intent = Intent(this,Resturent::class.java)
             startActivity(intent)
             finish()
@@ -29,6 +29,7 @@ class login : AppCompatActivity() {
         }
         binding.textView3.setOnClickListener{
             var intent = Intent( this,forgitPosswrold::class.java)
+            startActivity(intent)
             finish()
         }
     }
